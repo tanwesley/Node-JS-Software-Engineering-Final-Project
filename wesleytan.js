@@ -16,12 +16,22 @@ const port = process.env.PORT || 3000
 
 app.get('/', (req, res) => res.render('home'))
 
-// about
-app.get('/about', (req, res) => {
-    res.render('about', { fortune: fortune.getFortune() } )
+// syllabus
+app.get('/syllabus', (req, res) => {
+    res.render('syllabus')
 })
 
 app.use(express.static(__dirname + '/public'))
+
+// diceroll
+app.get('/diceroll', (req, res) => {
+    res.render('diceroll')
+})
+
+// meadowlark
+app.get('/meadowlark', (req, res) => {
+    res.render('meadowlark')
+})
 
 // custom 404 page
 app.use((req,res) => {
