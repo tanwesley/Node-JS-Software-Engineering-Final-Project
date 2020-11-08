@@ -1,0 +1,17 @@
+<head>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script>
+        function rollDice(){
+        var die = document.getElementById("die");
+        var status = document.getElementById("status");
+        var d = Math.round(Math.random()*5) + 1;
+        die.innerHTML = d;
+        }
+    </script>
+    </head>
+    <body onload="rollDice()">
+    <header>Dice Roller App</header>
+    <p>Click the Roll button or hit enter to roll the die</p>
+    <div id="die" class="dice"></div>
+    <button onclick="rollDice()" autofocus>Roll Die</button>
+    </body>
