@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node wesleytan"
   },
-  "author": "Ethan Brown <e@zepln.com>",
+  "author": "Wesley Tan <wesleytan@lewisu.edu>",
   "license": "(MIT OR GPL-3.0)",
   "dependencies": {
     "express": "^4.16.3",
