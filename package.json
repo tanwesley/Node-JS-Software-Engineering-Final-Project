@@ -2,14 +2,10 @@
   "name": "wesleytan",
   "version": "1.0.0",
   "description": "",
-  "main": "meadowlark.js",
+  "main": "wesleytan.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-<<<<<<< HEAD
     "start": "node wesleytan"
-=======
-    "start": "node meadowlark"
->>>>>>> abe14e7500c626b02a73200970244ea34430f4a2
   },
   "author": "Ethan Brown <e@zepln.com>",
   "license": "(MIT OR GPL-3.0)",
