@@ -47,5 +47,5 @@ app.use((err, req, res, next) => {
 })
 
 app.listen(port, () => console.log(
-    'Express started on http://losthost:${port};' +
+    'Express started on http://localhost:${port};' +
     'press Ctrl-C to terminate.'))
