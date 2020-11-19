@@ -12,7 +12,7 @@ app.set('view engine', 'handlebars')
 
 app.use(express.static(__dirname + '/public'))
 
-app.get('/', (req, res) => res.render('syllabus.handlebars'))
+app.get('/', (req, res) => res.render('home.handlebars'))
 
 
 
