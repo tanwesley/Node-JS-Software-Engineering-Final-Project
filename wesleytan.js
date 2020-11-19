@@ -1,8 +1,8 @@
 const express = require('express')
 const expressHandlebars = require ('express-handlebars')
-const fortune = require('./lib/fortune')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 //configure Handlebars view engine
 app.engine('handlebars', expressHandlebars ({
@@ -12,13 +12,11 @@ app.set('view engine', 'handlebars')
 
 app.use(express.static(__dirname + '/public'))
 
-const port = process.env.PORT || 3000
-
-app.get('/', (req, res) => res.render('home.handlebars'))
+app.get('/', (req, res) => res.render('diceroll.handlebars'))
 
 
 
-app.use(express.static(__dirname + '/views'))
+app.use(express.static(__dirname + '/public'))
 
 // syllabus
 app.get('/syllabus', (req, res) => {
