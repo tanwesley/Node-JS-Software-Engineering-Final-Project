@@ -35,7 +35,7 @@ app.get('/meadowlark', (req, res) => {
 
 //lovelace's
 app.get('/lovelaces', (req, res) => {
-    res.render('lovelaces.handlebars')
+    res.render('lovelaces.handlebars', {layout: 'lovelacesLayout.handlebars'})
 })
 
 // custom 404 page
