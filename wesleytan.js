@@ -16,12 +16,14 @@ const port = process.env.PORT || 3000
 
 app.get('/', (req, res) => res.render('home.handlebars'))
 
+
+
+app.use(express.static(__dirname + '/views'))
+
 // syllabus
 app.get('/syllabus', (req, res) => {
     res.render('syllabus.handlebars')
 })
-
-app.use(express.static(__dirname + '/public'))
 
 // diceroll
 app.get('/diceroll', (req, res) => {
