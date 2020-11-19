@@ -33,6 +33,11 @@ app.get('/meadowlark', (req, res) => {
     res.render('meadowlark.handlebars')
 })
 
+//lovelace's
+app.get('/lovelaces', (req, res) => {
+    res.render('lovelaces.handlebars')
+})
+
 // custom 404 page
 app.use((req,res) => {
     res.status(404)
