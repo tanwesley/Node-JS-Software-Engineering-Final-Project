@@ -38,6 +38,12 @@ app.get('/lovelaces', (req, res) => {
     res.render('lovelaces.handlebars', {layout: 'lovelacesLayout.handlebars'})
 })
 
+
+// online order
+app.get('/lovelaces/order', (req, res) => {
+    res.render('order.handlebars', {layout: 'lovelacesLayout.handlebars'})
+}) 
+
 // custom 404 page
 app.use((req,res) => {
     res.status(404)
