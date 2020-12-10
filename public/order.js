@@ -54,6 +54,7 @@ function addItemToCart(title, price, imgSrc) {
     cartRow.innerText = title
     var cartItems = document.getElementsByClassName('cart-items')[0]
     var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
+    var cartItemNotes
     for (var i = 0; i < cartItemNames.length; i++) {
         if (cartItemNames[i].innerText == title) {
             alert('This item is already in your cart')
@@ -67,7 +68,7 @@ function addItemToCart(title, price, imgSrc) {
     <span class="cart-price cart-column">${price}</span>
     <div class="cart-quantity cart-column">
         <input class="cart-quantity-input" type="number" value="1">
-        <button class="btn btn-danger" type="button">REMOVE</button>
+        <button class="btn btn-danger" type="button">REMOVE ITEM</button>
     </div>
     `
     cartRow.innerHTML = cartRowContents
@@ -88,6 +89,9 @@ function removeCartItem(event) {
 function updateCartTotal() {
     var cartItemContainer = document.getElementsByClassName('cart-items')[0]
     var cartRows = cartItemContainer.getElementsByClassName('cart-row')
+    var subtotal = 0
+    var tax = 0
+    var subtotal = 0
     var total = 0
 
     for (var i = 0; i < cartRows.length; i++) {
@@ -98,9 +102,17 @@ function updateCartTotal() {
         var price = parseFloat(priceElement.innerText.replace('$', ''))
         var quantity = quantityElement.value
         console.log(price * quantity)
-        total = total + (price * quantity)
+        subtotal = subtotal + (price * quantity)
+        tax = subtotal * 0.0625
+        total = subtotal + tax
+
+
     }
+    subtotal = Math.round(subtotal * 100) / 100
+    tax = Math.round(tax*100) / 100
     total = Math.round(total * 100) / 100
+    document.getElementsByClassName('cart-subtotal-price')[0].innerText = '$' + subtotal
+    document.getElementsByClassName('cart-tax-price')[0].innerText = '$' + tax
     document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
 }
 
