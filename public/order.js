@@ -5,6 +5,7 @@ if (document.readyState == 'loading') {
 }
 
 function ready() {
+    // Remove cart items
     var removeCartItemButtons = document.getElementsByClassName('btn-danger')
     console.log(removeCartItemButtons)
     for (var i = 0; i < removeCartItemButtons.length; i++) {
@@ -12,18 +13,21 @@ function ready() {
         button.addEventListener('click', removeCartItem)
     }
 
+    // Cart item quantity
     var quantityInputs = document.getElementsByClassName('cart-quantity-input')
     for (var i = 0; i < quantityInputs.length; i++) {
         var input = quantityInputs[i]
         input.addEventListener('change', quantityChanged)
     }
 
+    // adding items to cart
     var addToCartButtons = document.getElementsByClassName('shop-item-button')
     for (var i = 0; i < addToCartButtons.length; i++) {
         var button = addToCartButtons[i]
         button.addEventListener('click', addToCartClicked)
     }
 
+    // checkout
     document.getElementsByClassName('btn-purchase')[0].addEventListener('click',
     checkoutClicked)
 }
@@ -31,10 +35,13 @@ function ready() {
 function checkoutClicked() {
     alert('Order placed!')
     var cartItems = document.getElementsByClassName('cart-items')[0]
-    while (cartItems.hasChildNodes()) {
+    
+    //window.open("order/receipt")
+
+    while (cartItems.hasChildNodes()) { // clear order once order is placed
         cartItems.removeChild(cartItems.firstChild)
     }
-    updateCartTotal()
+    updateCartTotal() 
 }
 
 function addToCartClicked(event) {
@@ -44,23 +51,24 @@ function addToCartClicked(event) {
     var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
     var imgSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
     console.log(title, price, imgSrc)
-    addItemToCart(title, price, imgSrc)
+    addItemToCart(title, price)
     updateCartTotal()
 }
 
-function addItemToCart(title, price, imgSrc) {
+function addItemToCart(title, price) {
     var cartRow = document.createElement('div')
     cartRow.classList.add('cart-row')
     cartRow.innerText = title
     var cartItems = document.getElementsByClassName('cart-items')[0]
     var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
-    var cartItemNotes
     for (var i = 0; i < cartItemNames.length; i++) {
         if (cartItemNames[i].innerText == title) {
             alert('This item is already in your cart')
             return 
         }
     }
+
+    // fill in cart contents
     var cartRowContents = `
     <div class="cart-item cart-column">
         <span class="cart-item-title">${title}</span>
@@ -102,12 +110,14 @@ function updateCartTotal() {
         var price = parseFloat(priceElement.innerText.replace('$', ''))
         var quantity = quantityElement.value
         console.log(price * quantity)
+        
+        // price calculations
         subtotal = subtotal + (price * quantity)
         tax = subtotal * 0.0625
         total = subtotal + tax
-
-
     }
+    
+    // format prices
     subtotal = Math.round(subtotal * 100) / 100
     tax = Math.round(tax*100) / 100
     total = Math.round(total * 100) / 100
@@ -116,10 +126,15 @@ function updateCartTotal() {
     document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
 }
 
-function quantityChanged(event) {
+function quantityChanged(event) {   // triggers when the user changes the quantity of a cart item
     var input = event.target
     if (isNaN(input.value) || input.value <= 0) {
         input.value = 1
     }
     updateCartTotal()
 }
+
+function addedToCartPopUp() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+  }

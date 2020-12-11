@@ -44,6 +44,11 @@ app.get('/lovelaces/order', (req, res) => {
     res.render('order.handlebars', {layout: 'lovelacesLayout.handlebars'})
 }) 
 
+// receipt 
+app.get('/lovelaces/order/receipt', (req, res) => {
+    res.render('receipt.handlebars', {layout: 'lovelacesLayout.handlebars'})
+})
+
 // custom 404 page
 app.use((req,res) => {
     res.status(404)

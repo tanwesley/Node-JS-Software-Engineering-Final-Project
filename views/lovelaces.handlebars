@@ -1,10 +1,11 @@
+<!-- Wesley Tan 
+Software Engineering
+-->
 <!DOCTYPE html>
 <html>
 <title>Lovelace's Diner</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- <link rel="stylesheet" href="LovelacesStyleSheet.css"> -->
-<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
 <style>
 body, html {height: 100%}
@@ -19,99 +20,102 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
 </style>
 <body>
 
-<!-- Navbar (sit on top) -->
-<div class="w3-top w3-hide-small">
-  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
-    <a href="#" class="w3-bar-item w3-button">HOME</a>
-    <a href="#menu" class="w3-bar-item w3-button">MENU</a>
-    <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
-    <a href="/lovelaces/order" class="w3-bar-item w3-button">ORDER ONLINE</a>
-    <!-- <a href="#myMap" class="w3-bar-item w3-button">CONTACT</a> -->
+<!-- Navigation bar -->
+<div class="top hide-small">
+  <div class="bar xlarge black opacity hover-opacity-off" id="myNavbar">
+    <a href="#" class="bar-item button">HOME</a>
+    <a href="#menu" class="bar-item button">MENU</a>
+    <a href="#about" class="bar-item button">ABOUT</a>
+    <a href="/lovelaces/order" class="bar-item button">ORDER ONLINE</a>
+    <!-- <a href="#myMap" class="bar-item button">CONTACT</a> -->
   </div>
 </div>
   
-<!-- Header with image -->
-<header class="bgimg w3-display-container w3-grayscale-min" id="home">
-  <div class="w3-display-bottomleft w3-padding">
+<!-- Header -->
+<header class="bgimg display-container grayscale-min" id="home">
+  <div class="display-bottomleft padding">
   </div>
-  <div class="w3-display-middle w3-center">
-    <span class="w3-text-white w3-hide-small" style="font-size:100px">LOVELACE's<br>Diner</span>
-    <p><a href="#menu" class="w3-button w3-xxlarge w3-black"> Click to View the Menu!</a></p>
+  <div class="display-middle center">
+    <span class="text-white hide-small" style="font-size:100px">LOVELACE's<br>Diner</span>
+    <p><a href="#menu" class="button xxlarge black"> Click to View the Menu!</a></p>
   </div>
 </header>
 
 <!-- Menu Container -->
-<div class="w3-container w3-black w3-padding-64 w3-xxlarge" id="menu">
-  <div class="w3-content">
+<div class="container black padding-64 xxlarge" id="menu">
+  <div class="content">
   
-    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">THE MENU</h1>
-    <div class="w3-row w3-center w3-border w3-border-dark-grey">
+    <h1 class="center jumbo" style="margin-bottom:64px">THE MENU</h1>
+    <a href="/lovelaces/order" class="center jumbo">ORDER ONLINE</a>
+    <div class="center jumbo border border-dark-grey">
       <a href="javascript:void(0)" onclick="openMenu(event, 'Appetizers');" id="myLink">
-        <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Appetizers</div>
+        <div class="col s4 tablink padding-large hover-red">Appetizers</div>
       </a>
       <a href="javascript:void(0)" onclick="openMenu(event, 'Sandwiches');">
-        <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Sandwiches</div>
+        <div class="col s4 tablink padding-large hover-red">Sandwiches</div>
       </a>
       <a href="javascript:void(0)" onclick="openMenu(event, 'Drinks');">
-        <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Drinks</div>
+        <div class="col s4 tablink padding-large hover-red">Drinks</div>
       </a>
     </div>
 
-    <div id="Appetizers" class="w3-container menu w3-padding-32">
-      <h1><b>Fries</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$2.50</span></h1>
-      <p class="w3-text-grey">Fresh french fries</p>
+    <div id="Appetizers" class="container menu padding-32">
+      <h1><b>Fries</b> <span class="right tag dark-grey round">$2.50</span></h1>
+      <p class="text-grey"> Fresh french fries <img src="fries.jpg" style="width=200px;height:200px;"></p>
       <hr>
    
-      <h1><b>Onion Rings</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$3.50</span></h1>
-      <p class="w3-text-grey">Fried onion rings</p>
+      <h1><b>Onion Rings</b> <span class="right tag dark-grey round">$3.50</span></h1>
+      <p class="text-grey">Fried onion rings <img src="onionrings.jpg" style="width=200px;height:200px;"></p>
       <hr>
       
-      <h1><b>Chicken tenders</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$4.00</span></h1>
-      <p class="w3-text-grey">8 pieces of chicken tenders</p>
+      <h1><b>Chicken tenders</b> <span class="right tag dark-grey round">$4.00</span></h1>
+      <p class="text-grey">8 pieces of chicken tenders <img src="tendies.jpg" style="width=200px;height:200px;"></p>
       <hr>
     </div>
 
-    <div id="Sandwiches" class="w3-container menu w3-padding-32 w3-white">
-      <h1><b>Cheeseburger</b> <span class="w3-tag w3-grey w3-round"></span> <span class="w3-right w3-tag w3-dark-grey w3-round">$8.50</span></h1>
-      <p class="w3-text-grey">Classic cheeseburger: Beef patty, American cheese, lettuce, tomatoes, onions, pickles</p>
+    <div id="Sandwiches" class="container menu padding-32 white">
+      <h1><b>Cheeseburger</b> <span class="tag grey round"></span> <span class="right tag dark-grey round">$8.50</span></h1>
+      <p class="text-grey">Classic cheeseburger: Beef patty, American cheese, lettuce, tomatoes, onions, pickles <img src="burger.jpg" style="width=200px;height:200px;"></p>
       <hr>
    
-      <h1><b>Reuben Sandwich</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$6.50</span></h1>
-      <p class="w3-text-grey">Corned beef with sauerkraut and thousand island dressing</p>
+      <h1><b>Reuben Sandwich</b> <span class="right tag dark-grey round">$6.50</span></h1>
+      <p class="text-grey">Corned beef with sauerkraut and thousand island dressing <img src="reuben.jpg" style="width=200px;height:200px;"></p>
       <hr>
       
-      <h1><b>Italian</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$7.00</span></h1>
-      <p class="w3-text-grey">Salami, peppers, mayo, parmesan cheese</p>
+      <h1><b>Italian</b> <span class="right tag dark-grey round">$7.00</span></h1>
+      <p class="text-grey">Salami, peppers, mayo, parmesan cheese <img src="italian.jpg" style="width=200px;height:200px;"></p>
       <hr>
 
-      <h1><b>Tuna Melt</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$6.00</span></h1>
-      <p class="w3-text-grey">Tuna with mayo, swiss cheese on rye bread</p>
+      <h1><b>Tuna Melt</b> <span class="right tag dark-grey round">$6.00</span></h1>
+      <p class="text-grey">Tuna with mayo, swiss cheese on rye bread <img src="tunamelt.jpg" style="width=200px;height:200px;"></p>
       <hr>
     </div>
 
 
-    <div id="Drinks" class="w3-container menu w3-padding-32 w3-white">
-      <h1><b>Soda</b> <span class="w3-tag w3-grey w3-round"></span><span class="w3-right w3-tag w3-dark-grey w3-round">$1.50</span></h1>
-      <p class="w3-text-grey">Coke, Sprite, or Fanta</p>
+    <div id="Drinks" class="container menu padding-32 white">
+      <h1><b>Soda</b> <span class="tag grey round"></span><span class="right tag dark-grey round">$1.50</span></h1>
+      <p class="text-grey">Coke, Sprite, or Fanta <img src="soda.jpg" style="width=200px;height:200px;"></p>
       <hr>
    
-      <h1><b>Milkshake</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$4.00</span></h1>
-      <p class="w3-text-grey">Choice of strawberry, chocolate, or vanilla</p>
+      <h1><b>Milkshake</b> <span class="right tag dark-grey round">$4.00</span></h1>
+      <p class="text-grey">Vanilla milkshake <img src="shake.jpg" style="width=200px;height:200px;"></p>
       <hr>
 
   </div>
 </div>
 
 <!-- About Container -->
-<div class="w3-container w3-padding-64 w3-red w3-grayscale w3-xlarge" id="about">
-  <div class="w3-content">
-    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">About</h1>
-    <p>Lovelace's Diner is a diner named for one of the first computer programmers, Ada Lovelace</p>
-    <img src="diner.jpeg" style="width:100%" class="w3-margin-top w3-margin-bottom" alt="Restaurant">
+<div class="container padding-64 red grayscale xlarge" id="about">
+  <div class="content">
+    <h1 class="center jumbo" style="margin-bottom:64px">About</h1>
+    <p>Lovelace's Diner is a diner named for Ada Lovelace, one of the first computer programmers.
+        We serve your favorite American diner dishes and have the friendliest service in town!
+    </p>
+    <img src="diner.jpeg" style="width:100%" class="margin-top margin-bottom" alt="Restaurant">
     <h1><b>Opening Hours</b></h1>
     
-    <div class="w3-row">
-      <div class="w3-col s6">
+    <div class="row">
+      <div class="col s6">
         <p>Mon - Thursday 11:00 AM - 9:00 PM</p>
         <p>Friday - Saturday 12:00 PM - 10:00 PM</p>
         <p>Sunday - CLOSED</p>
@@ -124,7 +128,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
 
 
 <!-- Footer -->
-<footer class="w3-center w3-black w3-padding-48 w3-xxlarge">
+<footer class="center black padding-48 xxlarge">
 
 </footer>
 
@@ -138,10 +142,10 @@ function openMenu(evt, menuName) {
   }
   tablinks = document.getElementsByClassName("tablink");
   for (i = 0; i < x.length; i++) {
-     tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+     tablinks[i].className = tablinks[i].className.replace(" red", "");
   }
   document.getElementById(menuName).style.display = "block";
-  evt.currentTarget.firstElementChild.className += " w3-red";
+  evt.currentTarget.firstElementChild.className += " red";
 }
 document.getElementById("myLink").click();
 </script>
